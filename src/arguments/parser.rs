@@ -358,7 +358,7 @@ pub fn implement(args_str: Vec<String>)
                 );
 
                 for exec_shell in hook_arg.exec_shell {
-                    hook.add_command("/bin/sh".to_owned(), vec!["-c".to_owned(), exec_shell]);
+                    hook.add_command("command".to_owned(), vec![exec_shell]);
                 }
 
                 for effect in hook_arg.toggle_action.implement(&state, &toggle_indices)? {
